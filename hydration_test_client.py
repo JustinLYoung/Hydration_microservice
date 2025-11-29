@@ -9,6 +9,8 @@ def hydration_request(payload):
     socket.send(json.dumps(payload).encode())
     reply = json.loads(socket.recv().decode())
     print("Response:", reply)
+    socket.close()
+    context.term()
 
 
 
